@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Counter from './components/counter';  
+import Form from './components/Form'; 
+import Toggle from './components/Toggle';
+import UserProfile from './components/Userprofile';
+import UserData from './components/Name';
+import WebSocketExample from './components/Websocket';
+import DocumentTitleUpdater from './components/Document';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path="/counter" element={<Counter />} /> 
+          <Route path="/form" element={<Form />} /> 
+          <Route path="/toggle" element={<Toggle />} /> 
+          <Route path="/user" element={<UserProfile />} /> 
+          <Route path="/user1" element={<UserData />} /> 
+          <Route path="/web" element={<WebSocketExample />} />
+          <Route path="/doc" element={<DocumentTitleUpdater />} /> 
+     
+          
+
+
+
+        </Routes>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
